@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>云层</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+        ul{
+            height: 400px;
+            background-color: dodgerblue;
+            margin: 100px auto;
+            position: relative;
+            animation: bg 5s linear 0s infinite alternate;
+        }
+        ul li{
+            list-style: none;
+            height: 400px;
+            width: 400%;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        ul li:nth-child(1){
+            background: url(images/cloud_one.png) 0 0 repeat;
+            animation: one 30s linear 0s infinite alternate;
+            top: -50px;
+        }
+        ul li:nth-child(2){
+            background: url(images/cloud_two.png) 0 0 repeat;
+            animation: two 30s linear 0s infinite alternate;
+            top: -100px;
+        }
+        ul li:nth-child(3){
+            background: url(images/cloud_three.png) 0 0 repeat;
+            animation: three 30s linear 0s infinite alternate;
+        }
+        @keyframes bg {
+            from{
+                background-color: dodgerblue;
+            }
+            to{
+                background-color: powderblue;
+            }
+        }
+        @keyframes one{
+            100%{
+                transform: translateX(-1000px);
+            }
+        }
+        @keyframes two{
+            100%{
+                transform: translateX(-2000px);
+            }
+        }
+        @keyframes three{
+            100%{
+                transform: translateX(-3000px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>
