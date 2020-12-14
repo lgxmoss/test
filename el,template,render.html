@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue实例属性和方法</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script><!-- 加载vue.js文件 -->
+</head>
+<body>
+    <div id="app">
+        <my-cpn a="a" class="abc" id="dd" name="abc" :txt="msg"></my-cpn>
+    </div>
+</body>
+<script>
+    Vue.component("my-cpn",{
+        template:`<div>
+                    <button @click="show">查看组件属性</button>
+                    <p>我是父组件传来的值:{{txt}}</p>
+                </div>`,
+        props:["txt"],
+        methods:{
+            show(){
+                console.log(this.$attrs);
+            }
+        }
+    });
+    let vm=new Vue({
+        el:"#app",
+        data:{
+            msg:"我是父组件的数据"
+        }
+    });
+</script>
+</html>
