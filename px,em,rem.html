@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>px,em,rem</title>
+    <style>
+    html {
+        font-size: 16px;
+    }
+    div {
+        font-size: 40px;
+        width: 7.5em;       /* 7.5*40px = 300px */
+        height: 7.5em;      /* 7.5*40px = 300px */
+        border: solid 2px black;
+    }
+    div p {
+        font-size: 0.5em;   /* 0.5*40px = 20px */
+        width: 7.5em;       /* 7.5*20px = 150px */
+        height: 7.5em;      /* 7.5*20px = 150px */
+        border: solid 2px blue ;
+        color: blue;
+    }
+    div p span:first-of-type {
+        font-size: 0.5em;   /* 0.5*20px = 10px */
+        width: 7em;         /* 7*10px = 70px */
+        height: 6em;        /* 6*10px = 60px */
+        border: solid 1px red;
+        display: block;
+        color: red;
+    }
+    div p span:last-of-type {
+        font-size: 1.5rem;   /* 1.5*16px = 24px */
+        width: 6em;         /* 6*24px = 144px */
+        height: 2em;        /* 2*24px = 48px */
+        border: solid 1px red;
+        display: block;
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    HTML元素
+    <div>
+        父元素div
+        <p>
+           子元素p
+            <span>孙元素1span</span>
+            <span>孙元素2span</span>
+        </p>
+    </div>
+</body>
+</html>
