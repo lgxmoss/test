@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* for循环生成字体大小,间隔10px */
+.app {
+  font-size: 10px;
+}
+
+.font_by_for_5 {
+  font-size: 5px;
+}
+
+.font_by_for_10 {
+  font-size: 10px;
+}
+
+.font_by_for_15 {
+  font-size: 15px;
+}
+
+.font_by_for_20 {
+  font-size: 20px;
+}
+
+/* @if   @else if */
+.block1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.block2 {
+  overflow: hidden;
+}
+
+/* @each */
+.tag-red {
+  color: red;
+}
+
+.tag-blue {
+  color: blue;
+}
+
+.tag-pink {
+  color: pink;
+}
+
+/* @while */
+.item-6 {
+  width: 12em;
+}
+
+.item-4 {
+  width: 8em;
+}
+
+.item-2 {
+  width: 4em;
+}
+/*# sourceMappingURL=index.css.map */

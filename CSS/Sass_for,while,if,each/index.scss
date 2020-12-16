@@ -1,0 +1,47 @@
+/* for循环生成字体大小,间隔10px */
+$total: 3;      //个数
+$begin: 5;     //起始位置
+$interval: 5;   //间隔
+
+@function size($col, $int) { 
+    @return ($int * $col);
+}
+.app {
+    font-size: size(2, 5) + px;
+}
+
+@for $i from 0 through $total {
+    .font_by_for_#{$i * $interval + $begin} {
+        font-size: $begin + size($i, $interval) + px
+    }
+}
+/* @if   @else if */
+@mixin ellipsis_mix($line:1) {
+    @if $line > 1 { //与@if的使用
+      overflow: hidden; 
+    } @else {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+}
+.block1{
+    @include ellipsis_mix(1)
+}
+.block2{
+    @include ellipsis_mix(2)
+}
+/* @each */
+$colors: red, blue, pink;
+@each $color in $colors {
+    .tag-#{$color}{
+      color: $color;
+    }
+}
+/* @while */
+$i: 6;
+@while $i > 0 {
+    .item-#{$i} { width: 2em * $i; }
+    $i: $i - 2;
+    
+}
+// @use 'base';

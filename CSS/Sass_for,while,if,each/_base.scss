@@ -1,0 +1,9 @@
+//该文件是组件,比如按钮样式组件
+//组件以下划线开头,该文件不会被编译
+//只会在引用该文件中编译
+$main-color: #2ecc71;
+
+body {
+    color: azure;
+    border: 1px solid $main-color;
+}
