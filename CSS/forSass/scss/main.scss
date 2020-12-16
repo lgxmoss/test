@@ -1,0 +1,12 @@
+$blue : #1875e7;
+
+body {
+    margin: 0;
+    padding: 0;
+    div {
+        color : $blue;
+        p{
+            color: aquamarine;
+        }
+    }
+}

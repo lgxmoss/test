@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+        body {padding: 10px}
+        .father1 {
+            border: 10px solid orange;
+            width: 550px;
+            margin-top: 50px;
+        }
+        .father2 {
+            border: 10px solid rosybrown;
+            background-color: darkcyan;
+            width: 550px;
+            height: 50px;
+        }
+        p {
+            width: 100px;
+            height: 100px;
+            color: white;
+            float: left;
+        }
+        p:nth-child(1) {
+            background-color: red;
+        }
+        p:nth-child(2) {
+            background-color: green;
+        }
+        p:nth-child(3) {
+            background-color: blue;
+        }
+        p:nth-child(4) {
+            background-color: olive;
+        }
+        p:nth-child(5) {
+            background-color: fuchsia;
+        }
+        .clearfix:after {             
+            content: "";        /*生成内容作为最后一个元素*/ 
+            display: block;     /*使生成的元素以块级元素显示,占满剩余空间*/
+            height: 0;          /*避免生成内容破坏原有布局的高度*/
+            visibility: hidden; /*使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互*/
+            clear: both;        /*清除浮动元素对当前元素的影响*/ 
+        } 
+        .clearfix { 
+            *zoom:1;            /*用于兼容IE, 触发IE hasLayout*/ 
+        }
+    </style>
+</head>
+<body>
+<div class="father1 clearfix">
+    father1
+    <p>one-son</p>
+    <p>two-son</p>
+    <p>three-son</p>
+    <p>four-son</p>
+    <p>five-son</p>
+</div>
+<div class="father2">
+    father2
+</div>
+</body>
+</html>
