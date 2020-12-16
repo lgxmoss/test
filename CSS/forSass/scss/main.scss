@@ -1,12 +1,92 @@
-$blue : #1875e7;
+//全局变量
+$main-color: #2ecc71;
+$second-color: #27ae60;
+$line-color: #ddd;
 
-body {
+// sass --watch scss:dist/css  在dist/css下生成跟踪scss文件的css文件
+* {
     margin: 0;
     padding: 0;
-    div {
-        color : $blue;
-        p{
-            color: aquamarine;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    background: url(../img/17.jpg) no-repeat center center/cover;
+
+    //.card居中
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after{/* &代表body */
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;//层级下沉,在.card之下
+        background-color: $main-color;
+        opacity: 0.8;
+    }
+
+    .card {//嵌套选择器
+        width: 400px;
+        padding: 2rem 3rem;
+        background: #fff;
+
+        h3 {
+            font-weight: 400;
+            color: $second-color;
+            margin-bottom: 1rem;
+        }
+
+        form input {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid $line-color;
+
+            &:last-child {//登录元素
+                color: #fff;
+                background: $second-color;
+                transition: all 0.5s;//鼠标移上去,背景颜色渐变
+
+                &:hover {
+                    background: $main-color;
+                }
+            }
+
+            &:focus {//选中输入框后,边框变为背景色
+                outline: 1px solid $main-color;
+            }
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+
+            li a {
+                //局部变量
+                $dark-color: #333;
+
+                color: $dark-color;
+                text-decoration: none;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: $main-color;
+                    border: 1px solid $main-color{//嵌套属性
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                    };
+                    // border-bottom: 1px solid $main-color;//与上一个效果一样
+                }
+            }
         }
     }
 }
