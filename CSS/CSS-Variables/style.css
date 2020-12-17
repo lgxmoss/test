@@ -1,0 +1,128 @@
+/* 全局属性变量 */
+:root{
+    --container-bg-color:#333;
+    --left-bg-color:rgba(223,39,39,0.7);
+    --right-bg-color:rgba(43,43,43,0.8);
+    --left-button-hover-color:rgba(161,11,11,0.3);
+    --right-button-hover-color:rgba(92,92,92,0.3);
+
+    --hover-width:75%;
+    --other-width:25%;
+    --speed:1000ms;
+}
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--container-bg-color);
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;   
+}
+.split.left{
+    left: 0;
+    background: url("img/red.png") center center no-repeat;
+    background-size: cover;
+}
+.split.left::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: var(--left-bg-color);
+}
+
+.split.right{
+    right: 0;
+    background: url("img/black.png") center center no-repeat;
+    background-size: cover;
+}
+.split.right::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: var(--right-bg-color);
+}
+h1{
+    font-size: 4rem;/* 继承自html，即16，4*16 */
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;/* 禁止换行 */
+    top: 20%;
+}
+.button{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    height: 2.5rem;
+    padding-top: 1.3rem;
+
+    
+    width: 15rem;
+    text-align: center;
+    color: #ffffff;
+    border: #ffffff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;/* 取消下划线 */
+    text-transform: uppercase;/* 大写 */
+}
+.split.left .button:hover{
+    background-color: var(--left-button-hover-color);
+    border-color: var(--left-button-hover-color);
+}
+.split.right .button:hover{
+    background-color: var(--right-button-hover-color);
+    border-color: var(--right-button-hover-color);
+}
+/* 过渡动画 */
+.split.left, .split.right, .split.left::before, .split.right::before{
+    transition: var(--speed) all ease-in-out;
+}
+
+/* hover-right and hover-left */
+.hover-left .left{
+    width: var(--hover-width);
+}
+.hover-left .right{
+    width: var(--other-width);
+}
+.hover-left .right::before{/* 被覆盖 */
+    z-index: 2;
+}
+
+.hover-right .right{
+    width: var(--hover-width);
+}
+.hover-right .left{
+    width: var(--other-width);
+}
+.hover-right .left::before{/* 被覆盖 */
+    z-index: 2;
+}
+
+/* 响应式，即根据不同的设备做出修改 */
+@media(max-width:800px){/* 最大宽度小于800px时,缩小字体和按钮宽度 */
+    h1{
+        font-size: 2rem;
+    }
+    .button{
+        width: 12rem;        
+    }
+}
