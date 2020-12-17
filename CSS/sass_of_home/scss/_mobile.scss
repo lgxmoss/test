@@ -1,0 +1,12 @@
+@media (max-width: 700px) {
+//当页面宽度小于700px时,高度改为400px,并隐藏图片,需要在style.css文件引用,即@import '_mobile'
+    .showcase {
+        height: 400px;
+        &-content {
+            text-align: center;
+            img {
+                display: none;
+            }
+        }
+    }
+}
