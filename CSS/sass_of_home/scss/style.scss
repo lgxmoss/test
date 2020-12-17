@@ -1,0 +1,75 @@
+@import '_config';
+@import '_utilities';
+@import '_button';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $light-color;
+    font-family: $font-stack;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.showcase {
+/*     background-color: $primary-color;
+    color: set-text-color($primary-color);//调用_config内的函数 */
+    @include set-background($primary-color);//调用_config内的混合
+    height: 600px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+    
+        li {
+            padding: 15px;
+        }
+    }
+    a {
+        // color: #fff;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        // p {
+        //     margin: 20px 0;
+        // }
+    }
+}
+
+@import '_mobile'
